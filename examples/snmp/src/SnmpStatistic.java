@@ -142,8 +142,8 @@ public class SnmpStatistic {
         java.text.NumberFormat nf = java.text.NumberFormat.getInstance();
         nf.setMaximumFractionDigits(3);
         System.out.println("finished run in "+nf.format(seconds)+" seconds");
- 
-        /*com.mongodb.Mongo m = new com.mongodb.Mongo( new com.mongodb.MongoURI("mongodb://localhost:30000/"));
+        
+        com.mongodb.Mongo m = new com.mongodb.Mongo( new com.mongodb.MongoURI("mongodb://localhost:30000/"));
         com.mongodb.DB db = m.getDB( "test" );
         com.mongodb.DBCollection coll = db.getCollection(output_table);
         com.mongodb.BasicDBObject query = new com.mongodb.BasicDBObject();
@@ -154,9 +154,9 @@ public class SnmpStatistic {
         else
             System.out.println("'the' count: "+cur.next());
 
-        */
+        
          //*****************This is the second job.********************/
-       /* System.out.println(" ----------------------- Second MapReduce Job Starts --------------------");
+        System.out.println(" ----------------------- Second MapReduce Job Starts --------------------");
 	    final Configuration conf2 = new Configuration();
         MongoConfigUtil.setInputURI( conf2, "mongodb://localhost:30000/test."+output_table );
         conf.setBoolean(MongoConfigUtil.SPLITS_USE_SHARDS, use_shards);
@@ -210,7 +210,7 @@ public class SnmpStatistic {
             System.out.println("FAILURE: could not find count of \'the\'");
         else
             System.out.println("'the' count: "+cur2.next());
-   */ }
+   }
  
     public static void main( String[] args ) throws Exception{
         boolean[] tf = {false, true};
